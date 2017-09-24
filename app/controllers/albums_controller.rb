@@ -1,4 +1,4 @@
-class AlbumsController < ApplicationController
+class AlbumsController < OpenReadController
   before_action :set_album, only: [:show, :update, :destroy]
 
   # GET /albums
@@ -15,10 +15,10 @@ class AlbumsController < ApplicationController
 
   # POST /albums
   def create
-    @album = Album.new(album_params)
+    @album = current_user.albums.build(album_params)
 
     if @album.save
-      render json: @album, status: :created, location: @album
+      render json: @album, status: :created
     else
       render json: @album.errors, status: :unprocessable_entity
     end
