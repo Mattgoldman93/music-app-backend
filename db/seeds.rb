@@ -7,5 +7,4 @@
 #
 # Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+  albums = Album.create([{ title: 'Teenage Emotions', artist: 'Lil Yachty', genre: 'pop' year: 2017 }, { title: 'Transformer', artist: 'Lou Reed', genre: 'rock', year: 1972 }])
