@@ -1,1 +1,9 @@
-curl --include --request DELETE "http://localhost:4741/albums/${ID}"
+API="${API_ORIGIN:-http://localhost:4741}"
+URL_PATH="/albums"
+curl "${API}${URL_PATH}/${ID}" \
+  --include \
+  --request DELETE \
+  --header "Content-Type: application/json" \
+  --header "Authorization: Token token=$TOKEN"
+
+echo
