@@ -1,4 +1,4 @@
-class AlbumsController < OpenReadController
+class AlbumsController < ProtectedController
   before_action :set_album, only: [:show, :update, :destroy]
 
   # GET /albums

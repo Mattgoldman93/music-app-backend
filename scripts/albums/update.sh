@@ -6,9 +6,11 @@ curl "${API}${URL_PATH}/${ID}" \
   --request PATCH \
   --header "Authorization: Token token=${TOKEN}" \
   --header "Content-Type: application/json" \
-  --data '{
+  --data  '{
     "album": {
-      "old": "'"${OLD}"'",
-      "new": "'"${NEW}"'"
+      "title": "'"${TITLE}"'",
+      "artist": "'"${ARTIST}"'",
+      "genre": "'"${GENRE}"'",
+      "year": "'"${YEAR}"'"
     }
   }'
