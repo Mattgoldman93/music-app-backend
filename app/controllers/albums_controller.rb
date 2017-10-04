@@ -3,7 +3,7 @@ class AlbumsController < ProtectedController
 
   # GET /albums
   def index
-    @albums = Album.all
+    @albums = current_user.albums.all
 
     render json: @albums
   end
@@ -41,11 +41,11 @@ class AlbumsController < ProtectedController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_album
-      @album = Album.find(params[:id])
+      @album = current_user.albums.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def album_params
-      params.require(:album).permit(:title, :artist, :genre, :year)
+      params.require(:album).permit(:title, :user_id, :artist, :genre, :year)
     end
 end
